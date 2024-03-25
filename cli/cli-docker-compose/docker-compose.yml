@@ -1,0 +1,14 @@
+version: "3"
+services:
+  sonarscannercli:
+    image: sonarsource/sonar-scanner-cli:5.0.1
+    hostname: sonarscannercli
+    container_name: sonarscannercli
+    network_mode: "host"
+    environment:
+      SONAR_HOST_URL: "http://localhost:9000"
+      SONAR_TOKEN: "replace_me"
+      SONAR_SCANNER_OPTS: "-Xdebug -Xmx512m -Dsonar.scm.provider=git -Dsonar.projectKey=remplace_me -Dsonar.exclusions=pbgo/**,pbswagger/**,vendor/**"
+    volumes:
+      - ./src/replace_me:/usr/src/
+      - ./cache:/opt/sonar-scanner/.sonar/cache
