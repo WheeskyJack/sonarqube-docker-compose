@@ -27,6 +27,7 @@ click on the admin user and create token. copy the token for future use.
 `cd cli/cli-docker-compose`
 
 edit the token in docker-compose.yml (SONAR_TOKEN).
+
 update the projectKey=<repo_name_to_be_scanned>  (SONAR_SCANNER_OPTS)
 
 `cd cli/cli-docker-compose/src`
